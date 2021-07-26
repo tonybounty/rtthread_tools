@@ -127,11 +127,11 @@ class Reader():
       
 
   @property
-  def compression_type(self) -> str:
+  def compression_type(self) -> CompressionType:
     return self._compression_type
   
   @property 
-  def cipher_type(self) -> str:
+  def cipher_type(self) -> CipherType:
     return self._cipher_type
 
   @property
