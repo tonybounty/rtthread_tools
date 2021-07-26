@@ -1,0 +1,1 @@
+import rtthread_tools.ota_firmware
