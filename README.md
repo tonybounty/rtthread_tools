@@ -24,3 +24,5 @@ with open("ota_firmware.rbl", "rb") as r, open("plain_firmware.bin", "wb") as w:
     w.write(rblfile.Process())
 
 ```
+
+_QuickLZ and FastLZ compression are currently not supported_
