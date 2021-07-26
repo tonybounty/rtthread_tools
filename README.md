@@ -16,15 +16,11 @@ Usage example :
 ```python
 import rtthread_tools.ota_firmware as ota
 
-plain = None
-
-with open("ota_firmware.rbl", "rb") as r:
+with open("ota_firmware.rbl", "rb") as r, open("plain_firmware.bin", "wb")  as w:
   rblfile = ota.Reader(r.read())
   if rblfile.cipher_type == ota.CipherType.AES:
-    plain = rblfile.Process(key="0123456789ABCDEF0123456789ABCDEF", iv="0123456789ABCDEF")
+    w.write(rblfile.Process(key="0123456789ABCDEF0123456789ABCDEF", iv="0123456789ABCDEF"))
   else:
-    plain = rblfile.Process()
+    w.write(rblfile.Process())
 
-with open("plain_ota_firmware.bin", "wb") as w:
-  w.write(plain)
 ```
